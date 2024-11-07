@@ -12,9 +12,9 @@ def mask_account_card(incoming_data: str) -> str:
             letters += symbol
     masks_numbers = ''
     if len(numbers) == 16:
-        masks_numbers = masks.get_masks_card_number(numbers)
+        masks_numbers = masks.get_masks_card_number(int(numbers))
     elif len(numbers) == 20:
-        masks_numbers = masks.get_mask_account(numbers)
+        masks_numbers = masks.get_mask_account(int(numbers))
     return letters + masks_numbers
 
 
