@@ -1,4 +1,5 @@
-import masks
+from src import masks
+
 
 def mask_account_card(incoming_data: str) -> str:
     """ Принимает строку с типом и номером карты или счета. Возвращает строку с замаскированным номером """
