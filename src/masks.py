@@ -1,19 +1,18 @@
-def get_masks_card_number(card_number: int) -> str:
+def get_masks_card_number(card_number: str) -> str:
     """ Принимает на вход номер карты в виде числа и возвращает маску номера по правилу XXXX XX** **** XXXX """
-    if len(str(card_number)) != 16 or type(card_number) is not int:
+    if len(card_number) != 16:
         return """
         Incorrect data.
         Card number must consist of 16 digits.
         Try again.
         """
     else:
-        str_card_number = str(card_number)
         mask_card_number = []
-        for i in range(len(str_card_number)):
+        for i in range(len(card_number)):
             if 5 < i < 12:
                 mask_card_number.append('*')
             else:
-                mask_card_number.append(str_card_number[i])
+                mask_card_number.append(card_number[i])
         splited_card_number = []
         for i in range(len(mask_card_number)):
             if i % 4 != 0:
@@ -24,9 +23,9 @@ def get_masks_card_number(card_number: int) -> str:
         return ''.join(splited_card_number).lstrip()
 
 
-def get_mask_account(account_number: int) -> str:
+def get_mask_account(account_number: str) -> str:
     """ Принимает на вход номер счета в виде числа и возвращает маску номера по правилу **XXXX """
-    if len(str(account_number)) != 20 or type(account_number) is not int:
+    if len(account_number) != 20:
         return """
         Incorrect data.
         Card account must consist of 20 digits.

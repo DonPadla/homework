@@ -18,9 +18,9 @@ def mask_account_card(incoming_data: str) -> str:
             """
     masks_numbers = ''
     if len(numbers) == 16:
-        masks_numbers = masks.get_masks_card_number(int(numbers))
+        masks_numbers = masks.get_masks_card_number(numbers)
     elif len(numbers) == 20:
-        masks_numbers = masks.get_mask_account(int(numbers))
+        masks_numbers = masks.get_mask_account(numbers)
     else:
         return """
         Incorrect data.
