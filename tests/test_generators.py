@@ -58,6 +58,7 @@ def test_transaction_descriptions(transactions):
     assert next(operation) == "Перевод организации"
     assert next(operation) == "Перевод со счета на счет"
     assert next(operation) == "Перевод со счета на счет"
+    assert next(operation) == "Перевод с карты на карту"
 
 
 @pytest.mark.parametrize('start, stop, number', [
