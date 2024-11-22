@@ -48,7 +48,7 @@ def sort_list_reverse() -> list:
 
 
 @pytest.fixture
-def transaction_list() -> list:
+def transactions() -> list:
     return [
         {
             "id": 939719570,
@@ -129,7 +129,7 @@ def transaction_list() -> list:
 
 
 @pytest.fixture
-def usd_currency() -> list:
+def usd_currency():
     return [
         {
             "id": 939719570,

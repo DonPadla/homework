@@ -1,17 +1,17 @@
 from typing import Iterator
 
 
-def filter_by_currency(list_transaction: list, currency: str) -> Iterator:
+def filter_by_currency(transactions: list, currency: str) -> Iterator[dict]:
     ''' Принимает лист транзакций, возвращает итератор, который выдает транзакции по заданному параметру '''
-    yield (
-        transaction for transaction in list_transaction
-        if transaction['operationAmount']['currency']['code'] == currency
-    )
+    for operation in transactions:
+        if operation['operationAmount']['currency']['code'] == currency:
+            yield operation
 
 
-def transaction_descriptions(list_transaction: list) -> Iterator:
+def transaction_descriptions(transactions: list) -> Iterator[str]:
     ''' Принимает список словарей с транзакциями и возвращает описание каждой операции по очереди '''
-    yield (transaction['description'] for transaction in list_transaction)
+    for operation in transactions:
+        yield operation['description']
 
 
 def card_number_generator(start: int, stop: int) -> Iterator:
