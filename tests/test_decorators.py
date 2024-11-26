@@ -8,7 +8,7 @@ def test_log_captured(capsys):
 
     my_function(2, 2)
     captured = capsys.readouterr()
-    assert captured.out == "my_function is working\n"
+    assert captured.out == "my_function is working. Result: 4\n"
 
 
 def test_failed_log(capsys):
