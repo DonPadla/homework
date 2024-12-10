@@ -1,10 +1,16 @@
 import json
+import os.path
+
 from src.external_api import get_convert_amount
 import logging
 
+file_adress = os.path.abspath(
+    os.path.join(
+        os.path.dirname(
+            os.path.abspath(__file__)), "../logs/utils.log"))
 logger = logging.getLogger('utils')
 file_handler = logging.FileHandler(
-    '/home/don_padla/PycharmProjects/project_for_bank_1.2/logs/utils.log', 'w'
+    file_adress, 'w'
 )
 file_formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s: %(message)s")
 file_handler.setFormatter(file_formatter)
