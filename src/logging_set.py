@@ -2,7 +2,7 @@ import os
 import logging
 
 if not os.path.isdir("../logs"):
-     os.mkdir("../logs")
+    os.mkdir("../logs")
 
 file_adress = os.path.abspath(
     os.path.join(
