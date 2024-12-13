@@ -1,21 +1,6 @@
 import json
-import os.path
-
 from src.external_api import get_convert_amount
-import logging
-
-file_adress = os.path.abspath(
-    os.path.join(
-        os.path.dirname(
-            os.path.abspath(__file__)), "../logs/utils.log"))
-logger = logging.getLogger('utils')
-file_handler = logging.FileHandler(
-    file_adress, 'w'
-)
-file_formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s: %(message)s")
-file_handler.setFormatter(file_formatter)
-logger.addHandler(file_handler)
-logger.setLevel(logging.DEBUG)
+from src.logging_set import logger
 
 
 def get_open_operation_file(imported_file):

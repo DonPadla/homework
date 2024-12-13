@@ -1,13 +1,4 @@
-import logging
-
-logger = logging.getLogger('masks')
-file_handler = logging.FileHandler(
-    '/home/don_padla/PycharmProjects/project_for_bank_1.2/logs/masks.log', 'w'
-)
-file_formatter = logging.Formatter("%(asctime)s - %(name)s - %(levelname)s: %(message)s")
-file_handler.setFormatter(file_formatter)
-logger.addHandler(file_handler)
-logger.setLevel(logging.DEBUG)
+from src.logging_set import logger
 
 
 def get_masks_card_number(card_number: str) -> str:
