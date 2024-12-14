@@ -9,8 +9,8 @@ def get_open_csv_file(imported_file):
     logger.info(f'{imported_file}: opening attempt.')
     list_transaction = []
     try:
-        with open(imported_file) as file:
-            reader = csv.DictReader(file)
+        with open(imported_file, 'r', encoding='utf-8') as file:
+            reader = csv.DictReader(file, delimiter=';')
             logger.info(f'{imported_file}: ok.')
             for row in reader:
                 list_transaction.append(row)
