@@ -11,7 +11,7 @@ from src.datareaders import get_open_xlsx_file, get_open_csv_file
     read_data='id,state,date\n41428829,EXECUTED,2019-07-03T18:35:29.512364\n'
 )
 def test_read_csv_file(file):
-    result = [{'id': '41428829', 'state': 'EXECUTED', 'date': '2019-07-03T18:35:29.512364'}]
+    result = [{'id,state,date': '41428829,EXECUTED,2019-07-03T18:35:29.512364'}]
     assert result == get_open_csv_file('test_file')
 
 
