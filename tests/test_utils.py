@@ -1,11 +1,15 @@
+import os
 from unittest.mock import patch
 from src.utils import get_open_operation_file
 from src.utils import get_convert_currency
 
 
 def test_get_open_operation_file(data_from_oprations):
-    file = "../data/operations.json"
-    assert get_open_operation_file(file) == data_from_oprations
+    file_adress = os.path.abspath(
+        os.path.join(
+            os.path.dirname(
+                os.path.abspath(__file__)), "../data/operations.json"))
+    assert get_open_operation_file(file_adress) == data_from_oprations
 
 
 def test_error_open_operations_file():
