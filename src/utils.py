@@ -4,10 +4,11 @@ from src.logging_set import logger
 
 
 def get_open_operation_file(imported_file):
-    ''' Принимает на вход путь до JSON-файла, возвращает данные о финансовых транзакциях '''
+    """ Принимает на вход путь до JSON-файла, возвращает данные о финансовых транзакциях """
 
     logger.info(f'{imported_file}: opening attempt.')
     operations_list = []
+
     try:
         with open(imported_file, 'r') as file_json:
             operations_list = json.load(file_json)
@@ -21,9 +22,10 @@ def get_open_operation_file(imported_file):
 
 
 def get_convert_currency(transaction):
-    ''' Принимает транзакцию, возвращает ее сумму '''
+    """ Принимает транзакцию, возвращает ее сумму """
 
     logger.info('Data transmission.')
+
     if transaction['operationAmount']['currency']['code'] == 'RUB':
         logger.info('No conversion is required. Calculation.')
         logger.info('Operation is completed.')

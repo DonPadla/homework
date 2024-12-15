@@ -4,7 +4,7 @@ import requests
 
 
 def get_convert_amount(amount, currency):
-    ''' Принимает сумму и валюту, конвертирует сумму в RUB '''
+    """ Принимает сумму и валюту, конвертирует сумму в RUB """
 
     load_dotenv()
     api_key = os.getenv("API_KEY")
