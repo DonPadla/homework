@@ -1,8 +1,8 @@
-from unittest.mock import patch, mock_open
+from unittest.mock import mock_open, patch
 
 import pandas as pd
 
-from src.datareaders import get_open_xlsx_file, get_open_csv_file
+from src.datareaders import get_open_csv_file, get_open_xlsx_file
 
 
 @patch(

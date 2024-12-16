@@ -1,6 +1,7 @@
 import os
-from dotenv import load_dotenv  # ignore
+
 import requests
+from dotenv import load_dotenv  # ignore
 
 
 def get_convert_amount(amount, currency):

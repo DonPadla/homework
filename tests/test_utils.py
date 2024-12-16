@@ -1,15 +1,13 @@
-import os
-from unittest.mock import patch
-from src.utils import get_open_operation_file
-from src.utils import get_convert_currency
+from unittest.mock import mock_open, patch
+
+from src.utils import get_convert_currency, get_open_operation_file
 
 
-def test_get_open_operation_file(data_from_oprations):
-    file_adress = os.path.abspath(
-        os.path.join(
-            os.path.dirname(
-                os.path.abspath(__file__)), "../data/operations.json"))
-    assert get_open_operation_file(file_adress) == data_from_oprations
+@patch("builtins.open", new_callable=mock_open, read_data='{"test_mock": {"mock": "ok", "open": "yes"}}')
+def test_get_open_operation_file(mock_file):
+    expected_result = {'test_mock': {'mock': 'ok', 'open': 'yes'}}
+    result = get_open_operation_file('test_file')
+    assert result == expected_result
 
 
 def test_error_open_operations_file():

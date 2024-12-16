@@ -1710,3 +1710,8 @@ def data_from_oprations():
             "to": "Счет 96527012349577388612"
         }
     ]
+
+
+@pytest.fixture
+def dict_for_search_test():
+    assert None

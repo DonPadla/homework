@@ -1,4 +1,5 @@
 import json
+
 from src.external_api import get_convert_amount
 from src.logging_set import logger
 
@@ -10,7 +11,7 @@ def get_open_operation_file(imported_file):
     operations_list = []
 
     try:
-        with open(imported_file, 'r') as file_json:
+        with open(imported_file, 'r', encoding='utf8') as file_json:
             operations_list = json.load(file_json)
             logger.info(f'{imported_file}: ok.')
         logger.info('Operation is completed.')
