@@ -6,8 +6,9 @@ def mask_account_card(incoming_data: str) -> str:
 
     numbers = ''
     letters = ''
+    str_incoming_data = str(incoming_data)
 
-    for symbol in incoming_data:
+    for symbol in str_incoming_data:
 
         if symbol.isdigit():
             numbers += symbol

@@ -4,9 +4,14 @@ from typing import Iterator
 def filter_by_currency(transactions: list, currency: str) -> Iterator[dict]:
     """ Принимает лист транзакций, возвращает итератор, который выдает транзакции по заданному параметру """
 
-    for operation in transactions:
-        if operation['operationAmount']['currency']['code'] == currency:
-            yield operation
+    try:
+
+        for operation in transactions:
+            if operation['operationAmount']['currency']['code'] == currency:
+                yield operation
+
+    except Exception:
+        yield None
 
 
 def transaction_descriptions(transactions: list) -> Iterator[str]:
