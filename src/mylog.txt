@@ -1,0 +1,3 @@
+my_function is working.
+my_function have "division by zero" with arguments: (1, 0), {}
+my_function have "my_function() takes 2 positional arguments but 3 were given" with arguments: (1, 2, 3), {}
